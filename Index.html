@@ -1,88 +1,60 @@
-# 🌦️ El Tiempo con Tomorrow API
+<!DOCTYPE html>
+<html lang="es">
 
-Aplicación web desarrollada para la asignatura de Desarrollo Web en Entorno Cliente (DWEC).
+<head>
 
-## Descripción
+    <meta charset="UTF-8">
 
-La aplicación permite buscar ciudades mediante la API GeoDB Cities y consultar información meteorológica utilizando Tomorrow API.
+    <title>Tomorrow API</title>
 
-El usuario puede introducir el nombre de una población, seleccionar una ciudad de la lista de resultados y visualizar información detallada sobre ella junto con datos meteorológicos actuales y previsiones futuras.
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-## Funcionalidades
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-- Búsqueda de ciudades mediante GeoDB Cities.
-- Visualización de:
-  - País.
-  - Región.
-  - Población.
-- Consulta meteorológica en tiempo real:
-  - Temperatura actual.
-  - Humedad.
-  - Estado del tiempo mediante iconos.
-  - Información sobre lluvia e intensidad.
-- Consulta de previsiones meteorológicas:
-  - Primera previsión disponible.
-  - Última previsión disponible.
-  - Temperatura prevista.
-  - Estado meteorológico mediante iconos.
-  - Información sobre lluvia.
+    <link rel="stylesheet" href="style.css">
 
-## Tecnologías utilizadas
+</head>
 
-- HTML5
-- CSS3
-- JavaScript ES6
-- jQuery
-- Fetch API
-- AJAX (jQuery)
-- Axios
-- Async/Await
-- APIs REST
-- JSON
+<body>
 
-## APIs utilizadas
+    <div class="contenedor">
 
-### GeoDB Cities
+        <div class="izquierda">
 
-Utilizada para buscar ciudades y obtener información geográfica.
+            <h2>Buscar Ciudad</h2>
 
-https://geodb-cities-api.wirefreethought.com/
+            <input type="text" id="localidad">
 
-### Tomorrow API
+            <button id="buscar">
+                Buscar
+            </button>
 
-Utilizada para obtener información meteorológica en tiempo real y previsiones.
+        </div>
 
-https://www.tomorrow.io/
+        <div class="centro">
 
-## Estructura de la aplicación
+            <h2>Ciudades</h2>
 
-La interfaz se divide en tres zonas:
+            <ul id="listaCiudades"></ul>
 
-### Panel izquierdo
-- Campo de búsqueda.
-- Botón de búsqueda.
+        </div>
 
-### Panel central
-- Listado de ciudades encontradas.
+        <div class="derecha">
 
-### Panel derecho
-- Información de la ciudad seleccionada.
-- Tiempo actual.
-- Previsión meteorológica.
+            <h2>Información</h2>
 
-## Objetivos de aprendizaje
+            <div id="infoCiudad"></div>
 
-Este proyecto ha servido para practicar:
+            <div id="tiempoActual"></div>
 
-- Consumo de APIs REST.
-- Manejo de datos JSON.
-- Programación asíncrona con Async/Await.
-- Uso de Fetch API.
-- Uso de AJAX con jQuery.
-- Uso de Axios.
-- Manipulación dinámica del DOM.
-- Gestión de errores en peticiones HTTP.
+            <div id="forecast"></div>
 
-## Autor
+        </div>
 
-Proyecto realizado como práctica de Desarrollo Web en Entorno Cliente (DWEC).
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
